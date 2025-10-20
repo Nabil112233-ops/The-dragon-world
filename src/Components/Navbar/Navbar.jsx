@@ -9,9 +9,9 @@ const Navbar = () => {
         logOut().then(() => {
             alert('Your log out succesfully')
         })
-        .catch((error) => {
-            console.log(error)
-        })
+            .catch((error) => {
+                console.log(error)
+            })
     }
     return (
         <div className='flex justify-between items-center'>
@@ -22,7 +22,7 @@ const Navbar = () => {
                 <NavLink to='career'>Career</NavLink>
             </div>
             <div className='login-btn flex items-center gap-2'>
-                <img src={userimg} alt="" />
+                <img className='rounded-full' src={`${user ? user.photoURL : userimg}`} alt="" />
                 {
                     user ? (<button onClick={handleLogOut} className='btn btn-primary px-7'>Logout</button>) : (<Link to='/auth/login' className='btn btn-primary px-7'>Login</Link>)
                 }
